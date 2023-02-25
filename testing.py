@@ -25,3 +25,11 @@ knn.fit(X_train, y_train)
 # Test the model on the testing set
 y_pred = knn.predict(X_test)
 
+# Evaluate the model performance
+acc_score = accuracy_score(y_test, y_pred)
+conf_matrix = confusion_matrix(y_test, y_pred)
+class_report = classification_report(y_test, y_pred)
+
+print("Accuracy score: ", acc_score)
+print("Confusion matrix:\n", conf_matrix)
+print("Classification report:\n", class_report)
