@@ -49,3 +49,9 @@ data = data.drop_duplicates()
 
 # check the shape of the dataframe after removing duplicates
 print('After removing duplicates:', data.shape)
+
+print(data.shape)
+print(data['is_spam'].value_counts())
+
+#check for missing values
+print(data.isnull().sum())
