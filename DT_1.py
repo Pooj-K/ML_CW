@@ -68,3 +68,6 @@ print("y_train:", y_train)
 clf = DecisionTreeClassifier(random_state=42,criterion='gini')
 clf.fit(X_train,y_train)
 
+predictions_test=clf.predict(X_test)
+# Make predictions on the testing set
+y_pred = clf.predict(X_test)
