@@ -28,3 +28,12 @@ column_names = ["word_freq_make", "word_freq_address", "word_freq_all", "word_fr
 data.columns = column_names
 
 print(data)
+
+# check the shape of the dataframe before removing duplicates
+print('Before removing duplicates:', data.shape)
+
+# remove duplicates and keep the first occurrence
+data = data.drop_duplicates()
+
+# check the shape of the dataframe after removing duplicates
+print('After removing duplicates:', data.shape)
