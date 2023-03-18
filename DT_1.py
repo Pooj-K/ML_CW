@@ -91,3 +91,8 @@ from sklearn.metrics import classification_report,confusion_matrix
 print(classification_report(y_test,predictions_test))
 cm = confusion_matrix(y_test, y_pred)
 print("Confusion matrix:\n", cm)
+
+#Evaluating training dataset
+print(classification_report(y_train,predictions_train))
+cm_train = confusion_matrix(y_train, predictions_train)
+print("Confusion matrix for training corpus:\n", cm_train)
