@@ -55,3 +55,11 @@ print(data['is_spam'].value_counts())
 
 #check for missing values
 print(data.isnull().sum())
+
+corr_matrix = data.corr()
+plt.figure(figsize=(10,10))
+plt.imshow(corr_matrix, cmap='hot', interpolation='nearest')
+plt.colorbar()
+plt.xticks(range(len(corr_matrix)), corr_matrix.columns, rotation=90)
+plt.yticks(range(len(corr_matrix)), corr_matrix.columns)
+plt.show()
