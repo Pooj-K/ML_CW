@@ -86,3 +86,8 @@ plt.figure(figsize=(15,10))
 tree.plot_tree(clf,filled=True)
 plt.show()
 
+#Evaluating test dataset
+from sklearn.metrics import classification_report,confusion_matrix
+print(classification_report(y_test,predictions_test))
+cm = confusion_matrix(y_test, y_pred)
+print("Confusion matrix:\n", cm)
