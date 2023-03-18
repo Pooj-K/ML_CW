@@ -125,5 +125,5 @@ knn.fit(X_train, y_train)
 # Test the model on the testing set
 y_pred = knn.predict(X_test)
 
-#check accuracy of our model on the test data
+#check accuracy of the model on the test data
 knn.score(X_test, y_test)
