@@ -74,3 +74,8 @@ y = data.iloc[:, -1]   #Labels
 # Standardize the features
 scaler = StandardScaler()
 X_std = scaler.fit_transform(X)
+
+# Create a PCA object and fit it to the standardized features
+pca = PCA()
+pca.fit(X_std)
+
