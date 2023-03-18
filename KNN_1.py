@@ -41,3 +41,11 @@ data.shape
 print(data.shape)
 print(data['is_spam'].value_counts())
 
+# check the shape of the dataframe before removing duplicates
+print('Before removing duplicates:', data.shape)
+
+# remove duplicates and keep the first occurrence
+data = data.drop_duplicates()
+
+# check the shape of the dataframe after removing duplicates
+print('After removing duplicates:', data.shape)
