@@ -83,3 +83,9 @@ pca.fit(X_std)
 cumulative_var_ratio = np.cumsum(pca.explained_variance_ratio_)
 exp_var = pca.explained_variance_ratio_
 
+#Determine the number of components to keep
+n_components = np.argmax(cumulative_var_ratio >= 0.95) + 1
+
+# Apply PCA with the optimum number of components
+pca = PCA(n_components=n_components)
+principal_components = pca.fit_transform(X_std)
