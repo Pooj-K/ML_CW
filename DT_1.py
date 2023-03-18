@@ -37,3 +37,8 @@ data = data.drop_duplicates()
 
 # check the shape of the dataframe after removing duplicates
 print('After removing duplicates:', data.shape)
+
+data.info()
+
+#cleaning the data set
+data.isnull().sum()
