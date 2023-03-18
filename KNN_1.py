@@ -70,3 +70,7 @@ print(data.groupby('is_spam').mean())
 # Split the data into features and labels
 X = data.iloc[:, :-1]  #features
 y = data.iloc[:, -1]   #Labels
+
+# Standardize the features
+scaler = StandardScaler()
+X_std = scaler.fit_transform(X)
