@@ -32,5 +32,12 @@ column_names = ["word_freq_make", "word_freq_address", "word_freq_all", "word_fr
 
 # Set the column names of the dataframe
 data.columns = column_names
-
+#print dataset
 print(data)
+#prints information of data
+data.info()
+
+data.shape
+print(data.shape)
+print(data['is_spam'].value_counts())
+
