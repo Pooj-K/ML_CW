@@ -117,3 +117,6 @@ X_train, X_test, y_train, y_test = train_test_split(principal_components, y, tes
 knn = KNeighborsClassifier(n_neighbors=3)
 # Create the KNN model with the optimal number of neighbors
 #knn = KNeighborsClassifier(n_neighbors=optimal_k)
+
+# Train the model on the training set
+knn.fit(X_train, y_train)
