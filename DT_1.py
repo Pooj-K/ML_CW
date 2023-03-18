@@ -80,3 +80,9 @@ print('Accuracy:', accuracy)
 predictions_train = clf.predict(X_train)
 print(accuracy_score(y_train,predictions_train))
 
+#Visualizing final decision tree
+from sklearn import tree
+plt.figure(figsize=(15,10))
+tree.plot_tree(clf,filled=True)
+plt.show()
+
