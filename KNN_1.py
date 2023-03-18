@@ -63,3 +63,10 @@ plt.colorbar()
 plt.xticks(range(len(corr_matrix)), corr_matrix.columns, rotation=90)
 plt.yticks(range(len(corr_matrix)), corr_matrix.columns)
 plt.show()
+
+print(data.describe())
+print(data.groupby('is_spam').mean())
+
+# Split the data into features and labels
+X = data.iloc[:, :-1]  #features
+y = data.iloc[:, -1]   #Labels
