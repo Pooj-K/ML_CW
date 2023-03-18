@@ -47,4 +47,13 @@ data.isnull().sum()
 X = data.drop(['is_spam'], axis=1)
 y = data['is_spam']
 
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=101)
+
+# Print the shapes of the training and testing sets
+print("Shape of X_train:", X_train.shape)
+print("Shape of y_train:", y_train.shape)
+print("Shape of X_test:", X_test.shape)
+print("Shape of y_test:", y_test.shape)
 
