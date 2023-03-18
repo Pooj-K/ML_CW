@@ -41,7 +41,7 @@ print('After removing duplicates:', data.shape)
 data.info()
 
 #cleaning the data set
-data.isnull().sum()
+print(data.isnull().sum())
 
 # Split the dataset into features and target variable
 X = data.drop(['is_spam'], axis=1)
@@ -60,3 +60,11 @@ print("Shape of y_test:", y_test.shape)
 # Check if either X_train or y_train is empty or None
 print("X_train:", X_train)
 print("y_train:", y_train)
+
+# Train a decision tree classifier
+#dtc = DecisionTreeClassifier(random_state=42)
+#dtc.fit(X_train, y_train)
+
+clf = DecisionTreeClassifier(random_state=42,criterion='gini')
+clf.fit(X_train,y_train)
+
