@@ -57,3 +57,6 @@ print("Shape of y_train:", y_train.shape)
 print("Shape of X_test:", X_test.shape)
 print("Shape of y_test:", y_test.shape)
 
+# Check if either X_train or y_train is empty or None
+print("X_train:", X_train)
+print("y_train:", y_train)
