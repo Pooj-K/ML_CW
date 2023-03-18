@@ -108,3 +108,8 @@ plt.xlabel('Number of principal components')
 plt.ylabel('Cumulative explained variance')
 plt.title('Cumulative explained variance by number of principal components')
 plt.show()
+
+# Split the data into training and testing sets
+#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(principal_components, y, test_size=0.2, random_state=42)
+
