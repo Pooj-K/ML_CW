@@ -89,3 +89,10 @@ n_components = np.argmax(cumulative_var_ratio >= 0.95) + 1
 # Apply PCA with the optimum number of components
 pca = PCA(n_components=n_components)
 principal_components = pca.fit_transform(X_std)
+
+print(n_components)
+
+plt.plot(range(1,len(pca.explained_variance_ratio_)+1),pca.explained_variance_ratio_)
+plt.xlabel('Principal Component')
+plt.ylabel('Explained Variance Ratio')
+plt.show()
