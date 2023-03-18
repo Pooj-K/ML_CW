@@ -96,3 +96,9 @@ plt.plot(range(1,len(pca.explained_variance_ratio_)+1),pca.explained_variance_ra
 plt.xlabel('Principal Component')
 plt.ylabel('Explained Variance Ratio')
 plt.show()
+
+plt.plot(exp_var, marker='o')
+plt.xlabel('Principal components')
+plt.ylabel('Explained variance ratio')
+plt.title('Explained variance ratio by principal component')
+plt.show()
