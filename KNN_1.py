@@ -79,3 +79,7 @@ X_std = scaler.fit_transform(X)
 pca = PCA()
 pca.fit(X_std)
 
+# Calculate the cumulative sum of explained variance ratio
+cumulative_var_ratio = np.cumsum(pca.explained_variance_ratio_)
+exp_var = pca.explained_variance_ratio_
+
