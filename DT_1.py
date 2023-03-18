@@ -71,3 +71,12 @@ clf.fit(X_train,y_train)
 predictions_test=clf.predict(X_test)
 # Make predictions on the testing set
 y_pred = clf.predict(X_test)
+
+# Calculate the accuracy of the classifier
+accuracy = accuracy_score(y_test, y_pred)
+print('Accuracy:', accuracy)
+
+#Checking accuracy of training dataset
+predictions_train = clf.predict(X_train)
+print(accuracy_score(y_train,predictions_train))
+
