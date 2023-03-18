@@ -42,3 +42,9 @@ data.info()
 
 #cleaning the data set
 data.isnull().sum()
+
+# Split the dataset into features and target variable
+X = data.drop(['is_spam'], axis=1)
+y = data['is_spam']
+
+
