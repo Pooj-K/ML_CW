@@ -113,3 +113,7 @@ plt.show()
 #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
 X_train, X_test, y_train, y_test = train_test_split(principal_components, y, test_size=0.2, random_state=42)
 
+# Create the KNN model
+knn = KNeighborsClassifier(n_neighbors=3)
+# Create the KNN model with the optimal number of neighbors
+#knn = KNeighborsClassifier(n_neighbors=optimal_k)
