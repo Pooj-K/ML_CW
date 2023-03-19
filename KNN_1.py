@@ -156,3 +156,43 @@ knn_gscv = GridSearchCV(knn2, param_grid, cv=5, scoring='accuracy', return_train
 
 #fit model to data
 knn_gscv.fit(X, y)
+
+# N dimensional data
+ndim = 3
+mu = np.array([10] * ndim) # Mean
+sigma = np.zeros((ndim, ndim)) - 1.8 # Covariance
+np.fill_diagonal(sigma, 3.5)
+print("Mu ", mu.shape)
+print("Sigma ", sigma.shape)
+
+# Create 1000 samples using mean and sigma
+org_data = rnd.multivariate_normal(mu, sigma, size=(1000))
+print("Data shape ", org_data.shape)
+
+# Subtract mean from data
+mean = np.mean(org_data, axis= 0)
+print("Mean ", mean.shape)
+mean_data = org_data - mean
+print("Data after subtracting mean ", org_data.shape, "\n")
+
+#Compute the covariance matrix
+cov = np.cov(mean_data.T)
+cov = np.round(cov, 2)
+print("Covariance matrix ", cov.shape, "\n")
+
+#Perform eigen decomposition of covariance matrix
+eig_val, eig_vec = np.linalg.eig(cov)
+print("Eigen vectors ", eig_vec.shape)
+print("Eigen values ", eig_val.shape, "\n")
+
+# Sort eigen values and corresponding eigen vectors in descending order
+indices = np.arange(0,len(eig_val), 1)
+indices = ([x for _,x in sorted(zip(eig_val, indices))])[::-1]
+eig_val = eig_val[indices]
+eig_vec = eig_vec[:,indices]
+print("Sorted Eigen vectors ", eig_vec.shape)
+print("Sorted Eigen values ", eig_val.shape, "\n")
+
+# Take transpose of eigen vectors with data
+pca_data = mean_data.dot(eig_vec)
+print("Transformed data ", pca_data.shape)
