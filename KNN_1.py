@@ -285,3 +285,4 @@ plt.scatter(org_data[:, 0], org_data[:, 1], c='blue', label='Inliers')
 plt.scatter(org_data[outliers, 0], org_data[outliers, 1], c='red', label='Outliers')
 plt.legend()
 plt.show()
+
