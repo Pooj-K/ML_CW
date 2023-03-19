@@ -141,3 +141,18 @@ cv_scores = cross_val_score(knn_cv, principal_components, y, cv=5)
 #print each cv score (accuracy) and average them
 print(cv_scores)
 print('cv_scores mean:{}'.format(np.mean(cv_scores)))
+
+from sklearn.model_selection import GridSearchCV
+
+#create new a knn model
+knn2 = KNeighborsClassifier()
+
+#create a dictionary of all values we want to test for n_neighbors
+param_grid = {'n_neighbors': np.arange(1, 25)}
+
+#gridsearch to test all values for n_neighbors
+#knn_gscv = GridSearchCV(knn, param_grid, cv=5, scoring='accuracy', return_train_score=False,verbose=1)
+knn_gscv = GridSearchCV(knn2, param_grid, cv=5, scoring='accuracy', return_train_score=False, verbose=2)
+
+#fit model to data
+knn_gscv.fit(X, y)
