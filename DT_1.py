@@ -179,4 +179,7 @@ plt.show()
 clf = DecisionTreeClassifier(random_state=0, ccp_alpha=0.016)
 clf.fit(X_train,y_train)
 
-
+#Accuracy of test dataset
+from sklearn.metrics import accuracy_score
+pred=clf.predict(X_test)
+accuracy_score(y_test, pred)
