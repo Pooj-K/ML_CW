@@ -263,3 +263,9 @@ class_report = classification_report(y_test, y_pred)
 print("Accuracy score: ", acc_score)
 print("Confusion matrix:\n", conf_matrix)
 print("Classification report:\n", class_report)
+
+# Plot the first two principal components
+plt.scatter(principal_components[:, 0], principal_components[:, 1], c=y)
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.show()
