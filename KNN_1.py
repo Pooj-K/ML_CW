@@ -233,3 +233,6 @@ ymax = np.amax(pca_data[:,1])
 plt.show()
 plt.close('all')
 
+#Reverse PCA transformation
+recon_data = pca_data.dot(eig_vec.T) + mean
+print(recon_data.shape)
