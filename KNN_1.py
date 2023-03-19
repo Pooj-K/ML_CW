@@ -236,3 +236,17 @@ plt.close('all')
 #Reverse PCA transformation
 recon_data = pca_data.dot(eig_vec.T) + mean
 print(recon_data.shape)
+
+# Plot reconstructed data
+
+fig, ax = plt.subplots(1,3, figsize= (15, 15))
+ax[0].scatter(org_data[:,0], org_data[:,1], color='blue', marker='.')
+ax[1].scatter(mean_data[:,0], mean_data[:,1], color='red', marker='.')
+ax[2].scatter(recon_data[:,0], recon_data[:,1], color='orange', marker='.')
+ax[0].set_title("Scatter plot of original data")
+ax[1].set_title("Scatter plot of data after subtracting mean")
+ax[2].set_title("Scatter plot of reconstructed data")
+ax[0].grid('on')
+ax[1].grid('on')
+ax[2].grid('on')
+plt.show()
