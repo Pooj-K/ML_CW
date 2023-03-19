@@ -189,3 +189,9 @@ print(accuracy_score(y_test,pred))
 pred_1 = clf.predict(X_train)
 accuracy_score(y_train,pred_1)
 print(accuracy_score(y_train,pred_1))
+
+#Visualizing after pruning
+from sklearn import tree
+plt.figure(figsize=(15,10))
+tree.plot_tree(clf,filled=True)
+plt.show()
