@@ -96,3 +96,8 @@ print("Confusion matrix:\n", cm)
 print(classification_report(y_train,predictions_train))
 cm_train = confusion_matrix(y_train, predictions_train)
 print("Confusion matrix for training corpus:\n", cm_train)
+
+#Finding false positive rate and true positive rate
+from sklearn.metrics import roc_curve,auc
+dt_probs = clf.predict_proba(X_test)[:,1]
+fpr_dt, tpr_dt, thresholds_dt = roc_curve(y_test,dt_probs)
