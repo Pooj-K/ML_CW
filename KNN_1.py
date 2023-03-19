@@ -196,3 +196,40 @@ print("Sorted Eigen values ", eig_val.shape, "\n")
 # Take transpose of eigen vectors with data
 pca_data = mean_data.dot(eig_vec)
 print("Transformed data ", pca_data.shape)
+
+# Plot data
+
+fig, ax = plt.subplots(1,3, figsize= (15,15))
+# Plot original data
+ax[0].scatter(org_data[:,0], org_data[:,1], color='blue', marker='.')
+
+# Plot data after subtracting mean from data
+ax[1].scatter(mean_data[:,0], mean_data[:,1], color='red', marker='.')
+
+# Plot transformed data
+ax[2].scatter(pca_data[:,0], pca_data[:,1], color='orange', marker='.')
+
+# Set title
+ax[0].set_title("Scatter plot of original data")
+ax[1].set_title("Scatter plot of data after subtracting mean")
+ax[2].set_title("Scatter plot of transformed data")
+
+# Set x ticks
+ax[0].set_xticks(np.arange(-8, 1, 8))
+ax[1].set_xticks(np.arange(-8, 1, 8))
+ax[2].set_xticks(np.arange(-8, 1, 8))
+
+# Set grid to 'on'
+ax[0].grid('on')
+ax[1].grid('on')
+ax[2].grid('on')
+
+major_axis = eig_vec[:,0].flatten()
+xmin = np.amin(pca_data[:,0])
+xmax = np.amax(pca_data[:,0])
+ymin = np.amin(pca_data[:,1])
+ymax = np.amax(pca_data[:,1])
+
+plt.show()
+plt.close('all')
+
