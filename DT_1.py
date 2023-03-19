@@ -124,4 +124,6 @@ path = clf.cost_complexity_pruning_path(X_train, y_train)
 ccp_alphas = path.ccp_alphas
 impurities = path.impurities
 
+for ccp_alpha, impurity in zip(ccp_alphas, impurities):
+    print("ccp_alpha: {:.4f}   Total impurity: {:.4f}".format(ccp_alpha, impurity))
 
