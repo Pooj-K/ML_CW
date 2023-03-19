@@ -129,3 +129,15 @@ y_pred = knn.predict(X_test)
 knn.score(X_test, y_test)
 print(knn.score(X_test, y_test))
 
+from sklearn.model_selection import cross_val_score
+#create a new KNN model
+knn_cv = KNeighborsClassifier(n_neighbors=5)
+
+#train model with cv of 5
+#cv_scores = cross_val_score(knn_cv, X, y, cv=5)
+cv_scores = cross_val_score(knn_cv, principal_components, y, cv=5)
+
+
+#print each cv score (accuracy) and average them
+print(cv_scores)
+print('cv_scores mean:{}'.format(np.mean(cv_scores)))
