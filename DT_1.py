@@ -127,3 +127,10 @@ impurities = path.impurities
 for ccp_alpha, impurity in zip(ccp_alphas, impurities):
     print("ccp_alpha: {:.4f}   Total impurity: {:.4f}".format(ccp_alpha, impurity))
 
+#Visualizing alpha w.r.t impurity of leaves
+fig, ax = plt.subplots(figsize=(8,5))
+ax.plot(ccp_alphas[:-1], impurities[:-1], marker='o', drawstyle="steps-post")
+ax.set_xlabel("effective alpha")
+ax.set_ylabel("total impurity of leaves")
+ax.set_title("Total Impurity vs effective alpha for training set")
+
