@@ -104,5 +104,16 @@ fpr_dt, tpr_dt, thresholds_dt = roc_curve(y_test,dt_probs)
 
 #Plotting ROC curve for our Decision Tree
 auc_score_dt = auc(fpr_dt,tpr_dt)
-auc_score_dt
+print(auc_score_dt)
 
+def plot_roc_curve(fpr, tpr):
+    plt.figure(figsize=(10,8))
+    plt.plot(fpr_dt, tpr_dt, color='orange', label='AUC = %0.2f' % auc_score_dt)
+    plt.plot([0, 1], [0, 1], color='darkblue', linestyle='--')
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver Operating Characteristic (ROC) Curve')
+    plt.legend()
+    plt.show()
+
+plot_roc_curve(fpr_dt,tpr_dt)
