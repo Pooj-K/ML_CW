@@ -102,3 +102,7 @@ from sklearn.metrics import roc_curve,auc
 dt_probs = clf.predict_proba(X_test)[:,1]
 fpr_dt, tpr_dt, thresholds_dt = roc_curve(y_test,dt_probs)
 
+#Plotting ROC curve for our Decision Tree
+auc_score_dt = auc(fpr_dt,tpr_dt)
+auc_score_dt
+
