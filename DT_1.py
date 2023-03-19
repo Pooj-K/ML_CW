@@ -175,3 +175,8 @@ ax.legend()
 plt.grid()
 plt.show()
 
+#Accuracy after pruning
+clf = DecisionTreeClassifier(random_state=0, ccp_alpha=0.016)
+clf.fit(X_train,y_train)
+
+
