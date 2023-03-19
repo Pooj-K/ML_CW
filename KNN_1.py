@@ -269,3 +269,19 @@ plt.scatter(principal_components[:, 0], principal_components[:, 1], c=y)
 plt.xlabel('Principal Component 1')
 plt.ylabel('Principal Component 2')
 plt.show()
+
+# Load some example data
+#X = np.random.randn(100, 2)
+
+# Fit a Local Outlier Factor (LOF) model to detect outliers
+clf = LocalOutlierFactor(n_neighbors=20)
+y_pred = clf.fit_predict(org_data)
+
+# Identify the outliers
+outliers = np.where(y_pred == -1)[0]
+
+# Plot the data points, highlighting the outliers in red
+plt.scatter(org_data[:, 0], org_data[:, 1], c='blue', label='Inliers')
+plt.scatter(org_data[outliers, 0], org_data[outliers, 1], c='red', label='Outliers')
+plt.legend()
+plt.show()
