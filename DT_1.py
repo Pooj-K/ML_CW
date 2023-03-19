@@ -117,3 +117,11 @@ def plot_roc_curve(fpr, tpr):
     plt.show()
 
 plot_roc_curve(fpr_dt,tpr_dt)
+
+#Pruning of the decision tree
+# Determine the range of ccp_alpha values to explore
+path = clf.cost_complexity_pruning_path(X_train, y_train)
+ccp_alphas = path.ccp_alphas
+impurities = path.impurities
+
+
