@@ -250,3 +250,7 @@ ax[0].grid('on')
 ax[1].grid('on')
 ax[2].grid('on')
 plt.show()
+
+#Compute reconstruction loss
+loss = np.mean(np.square(recon_data - org_data))
+print("Reconstruction loss ", loss)
